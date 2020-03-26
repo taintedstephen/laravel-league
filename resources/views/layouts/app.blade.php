@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600|Playfair+Display&display=swap" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="/js/jquery.min.js" type="text/javascript"></script>
+	<script src="/js/jquery-ui.min.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="viewport">
