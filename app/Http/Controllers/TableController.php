@@ -37,7 +37,8 @@ class TableController extends Controller
 			}
 		}
 		return view('tables', [
-			'tables' => $tables
+			'tables' => $tables,
+			'title' => 'League Tables'
 		]);
     }
 

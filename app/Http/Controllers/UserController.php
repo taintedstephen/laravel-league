@@ -16,12 +16,17 @@ class UserController extends Controller
 	public function index()
 	{
 		$users = User::all();
-		return view('users.all', ['users' => $users]);
+		return view('users.all', [
+			'users' => $users,
+			'title' => 'Users'
+		]);
 	}
 
 	public function new()
 	{
-		return view('users.new');
+		return view('users.new', [
+			'title' => 'New User'
+		]);
 	}
 
 	public function create(Request $request)
@@ -44,7 +49,10 @@ class UserController extends Controller
 	public function edit($id)
 	{
 		$user = User::findOrFail($id);
-		return view('users.edit', ['user' => $user]);
+		return view('users.edit', [
+			'user' => $user,
+			'title' => 'Edit User'
+		]);
 	}
 
 	public function update(Request $request)

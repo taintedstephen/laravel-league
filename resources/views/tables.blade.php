@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="page-title">
-		<h1>Tables</h1>
-	</div>
+	
 	<ul class="quick-links">
 	@foreach ($tables as $table)
 		<li>

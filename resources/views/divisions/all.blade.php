@@ -4,9 +4,6 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h1 class="card-title">
-					Divisions
-				</h1>
 
 				<div class="btn-toolbar">
 					<a href="/divisions/new" class="btn btn-primary">New Division</a>

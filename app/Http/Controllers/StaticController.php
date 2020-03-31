@@ -11,6 +11,8 @@ class StaticController extends Controller
 
     public function rules()
     {
-        return view('static/rules');
+        return view('static/rules', [
+			'title' => 'Rules'
+		]);
     }
 }

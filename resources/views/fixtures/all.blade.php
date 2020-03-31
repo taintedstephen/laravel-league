@@ -2,12 +2,6 @@
 
 @section('content')
 
-	<div class="page-title">
-		<h1>Fixtures</h1>
-	</div>
-	<div class="page-subtitle">
-		<h2>{{ $title }}</h2>
-	</div>
 	@foreach ($weeks as $week)
 		<div class="fixture-week">
 			<div class="page-title">

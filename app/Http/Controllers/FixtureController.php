@@ -45,8 +45,8 @@ class FixtureController extends Controller
 			}
 		}
 		return view('fixtures.all', [
-			'title' => '',
-			'weeks' => $weeks
+			'weeks' => $weeks,
+			'title' => 'Fixtures'
 		]);
 	}
 

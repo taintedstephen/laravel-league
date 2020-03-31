@@ -4,10 +4,7 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h1 class="card-title">
-					Users
-				</h1>
-
+			
 				<div class="btn-toolbar">
 					<a href="/users/new" class="btn btn-primary float-right">New User</a>
 				</div>

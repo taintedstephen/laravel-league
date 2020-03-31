@@ -4,9 +4,6 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h1 class="card-title">
-					Assign Players to Divisions
-				</h1>
 
 				<form method="post" action="/divisions/save-players">
 					@csrf

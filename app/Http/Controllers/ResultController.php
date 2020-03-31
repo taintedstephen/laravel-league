@@ -16,7 +16,10 @@ class ResultController extends Controller
     public function index()
     {
         $matches = Match::all()->sortBy('match_week');;
-		return view('matches.all', ['matches' => $matches]);
+		return view('matches.all', [
+			'matches' => $matches,
+			'title' => 'Matches'
+		]);
     }
 
 	public function generate()
@@ -25,6 +28,7 @@ class ResultController extends Controller
 		return view('matches.generated', [
 			'fixtures' => $fixtures,
 			'json' => json_encode($fixtures),
+			'title' => 'Generated Matches'
 		]);
 	}
 
@@ -55,7 +59,10 @@ class ResultController extends Controller
 	public function edit($id)
 	{
 		$match = Match::findOrFail($id);
-		return view('matches.edit', ['match' => $match]);
+		return view('matches.edit', [
+			'match' => $match,
+			'title' => 'Edit Matche'
+		]);
 	}
 
 	public function update(Request $request)

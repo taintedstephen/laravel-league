@@ -17,6 +17,58 @@ html {
 	}
 }
 
+body {
+	background: #CCC;
+}
+
+/* ======================================================================== */
+
+/* ==== BACKGROUND ======================================================== */
+
+@-webkit-keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(90deg);
+	}
+}
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(90deg);
+	}
+}
+
+.background {
+	background-image: url(../images/parallax1.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+}
+
+.lines {
+	-webkit-animation: spinner 60s linear infinite;
+	animation: spinner 60s linear infinite;
+	background: url(../images/linework1.png) center center no-repeat;
+	background-size: contain;
+	min-height: 100%;
+	left: 0px;
+	opacity: 0.5;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: 0;
+}
+
 /* ======================================================================== */
 
 /* ==== TYPOGRAPHY ======================================================== */
@@ -24,34 +76,35 @@ html {
 body {
 	font-size: 1rem;
 	line-height: 1.5;
-	background-color: #ffffff;
-	color: #231f20;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
+	color: rgba(255,255,255,.8);
+	font-family: Helvetica,'Open Sans', sans-serif;
+	font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
-	font-weight: 600;
-	letter-spacing: 0.2em;
+	font-weight: 500;
 	margin: 0;
+	letter-spacing: 0.1rem;
 }
 
 h1 {
-	font-size: 3rem;
+	font-size: 1.8rem;
 }
 
 h2 {
-	font-size: 2.4rem;
+	font-size: 1.6rem;
 }
 
 h3 {
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 }
 
 .viewport {
 	display: block;
 	overflow: hidden;
+	position: relative;
+	z-index: 1;
 }
 
 /* ======================================================================== */
@@ -60,10 +113,24 @@ h3 {
 
 .header {
 	display: block;
-	background-color: #231f20;
+	background-color: rgba(0, 0, 0, .8);
 	font-size: 0;
 	line-height: 0;
 	position: relative;
+	padding: 20px
+}
+
+.header h1 {
+	color: #ffffff;
+}
+
+.header__inner {
+	max-width: 90vw;
+	margin: 0 auto;
+	justify-content: space-between;
+	display: flex;
+	width: 100%;
+	align-items: center;
 }
 
 .header__logo {
@@ -75,19 +142,16 @@ h3 {
 .header-logo__image {
 	width: 50px;
 	height: 50px;
+	border-radius: 50px;
 }
 
 .header__trigger {
 	width: 44px;
 	height: 44px;
-	top: 50%;
-	right: 10px;
-	margin-top: -22px;
 	background-image: url(../images/menu.svg);
 	background-size: 24px;
 	background-position: center center;
 	background-repeat: no-repeat;
-	position: absolute;
 	cursor: pointer;
 }
 
@@ -96,7 +160,7 @@ h3 {
 /* ==== MENU STYLES ======================================================= */
 
 .menu-overlay {
-	background-color: #c62b29;
+	background-color: #000000;
 	color: #ffffff;
 	position: fixed;
 	top: 0;
@@ -129,7 +193,7 @@ body.menu-open .menu-overlay {
 .menu-overlay__content {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	min-height: 100%;
 	padding: 80px 30px;
 	box-sizing: border-box;
@@ -144,7 +208,6 @@ body.menu-open .menu-overlay {
 	margin: 0;
 	padding: 0;
 	text-align: center;
-	display: block;
 	display: flex;
 	flex-direction: column;
 }
@@ -154,7 +217,7 @@ body.menu-open .menu-overlay {
 }
 
 .nav-link {
-	color: #ffffff;
+	color: rgba(255,255,255,0.5);
 	text-transform: uppercase;
 	font-size: 1.8rem;
 	text-decoration: none;
@@ -164,7 +227,7 @@ body.menu-open .menu-overlay {
 }
 
 .nav-link:hover {
-	color: #231f20;
+	color: rgba(255,255,255,1);
 }
 
 /* ======================================================================== */
@@ -177,41 +240,22 @@ body.menu-open .menu-overlay {
 	margin: auto;
 }
 
-.page-title {
-	display: block;
-	text-align: center;
-}
-
-.page-title h1,
-.page-title h2,
-.page-title h3 {
-	position: relative;
-	padding-bottom: 0.5rem;
-	margin-bottom: 2rem;
-}
-
-.page-title h2:after,
-.page-title h3:after {
-	left: 50%;
-	margin-left: -40px;
-	width: 80px;
-	position: absolute;
-	bottom: 0;
-	background: #231f20;
-	content:" ";
-	height: 4px;
-}
-
-p + .page-title {
-	margin-top: 4rem;
-}
-
 /* ======================================================================== */
 
 /* ==== LEAGUE TABLES PAGE ================================================ */
 
 .division {
-	margin: 0 0 4rem;
+	margin: 0 0 2rem;
+    border: none;
+    background: rgba(0,0,0,.05);
+	padding: 20px;
+}
+
+.division h3 {
+	margin-bottom: 1rem;
+	text-align: left;
+	font-weight: 600;
+	letter-spacing: 1rem;
 }
 
 .table {
@@ -220,10 +264,25 @@ p + .page-title {
 	border-radius: 3px;
 }
 
-.table th,
+.table th {
+	padding: 0.7rem 1rem;
+    text-align: center;
+    background: rgba(0,0,0,.2);
+    border-bottom: .25rem solid #231f20;
+}
+
 .table td {
 	padding: 0.7rem 1rem;
-	text-align: left;
+	text-align: center;
+	background: rgba(255,255,255,.15);
+	margin-bottom: .5rem;
+	border-bottom: .25rem solid rgba(0,0,0,.3);
+}
+
+.table .th-name,
+.table .td-name,
+.table .td-name a {
+	text-align: left
 }
 
 @media (max-width: 950px) {
@@ -233,16 +292,9 @@ p + .page-title {
 	}
 }
 
-.table th {
-	border-bottom: 2px solid #231f20;
-}
-
-.table td {
-	border-bottom: 1px dotted #eeeeee;
-}
-
 .table a {
-	color: #231f20;
+	color: #ffffff;
+	text-decoration: none;
 }
 
 @media (max-width: 950px) {
@@ -329,17 +381,27 @@ p + .page-title {
 }
 
 .quick-links li a {
-	color: #231f20;
+	color: #fff;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	padding-bottom: 2px;
-	border-bottom: 1px solid #231f20;
+	opacity: .5;
+	transition: opacity .25s;
+}
+
+@media (max-width: 767px) {
+	.quick-links li {
+		padding: 0.25rem;
+	}
+
+	.quick-links li a {
+		font-size: 0.875rem;
+	}
 }
 
 .quick-links li a:hover {
-	color: #c62b29;
-	border-bottom: 1px solid #c62b29;
+	opacity: 1;
 }
 
 /* ======================================================================== */

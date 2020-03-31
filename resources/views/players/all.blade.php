@@ -4,9 +4,7 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h1 class="card-title">
-					Players
-				</h1>
+				
 				<div class="btn-toolbar">
 					<a href="/players/new" class="btn btn-primary float-right">New Player</a>
 				</div>

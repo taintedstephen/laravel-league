@@ -17,12 +17,17 @@ class DivisionController extends Controller
 	public function index()
 	{
 		$divisions = Division::all()->sortBy('sort_order');
-		return view('divisions.all', ['divisions' => $divisions]);
+		return view('divisions.all', [
+			'divisions' => $divisions,
+			'title' => 'Divisions'
+		]);
 	}
 
 	public function new()
 	{
-		return view('divisions.new');
+		return view('divisions.new', [
+			'title' => 'New Division'
+		]);
 	}
 
 	public function create(Request $request)
@@ -41,7 +46,10 @@ class DivisionController extends Controller
 	public function edit($id)
 	{
 		$division = Division::findOrFail($id);
-		return view('divisions.edit', ['division' => $division]);
+		return view('divisions.edit', [
+			'division' => $division,
+			'title' => 'Edit Division'
+		]);
 	}
 
 	public function update(Request $request)
@@ -70,7 +78,8 @@ class DivisionController extends Controller
 		$unassignedPlayers = Player::where('division_id', null)->get();
 		return view('divisions.players', [
 			'divisions' => $divisions,
-			'unassignedPlayers' => $unassignedPlayers
+			'unassignedPlayers' => $unassignedPlayers,
+			'title' => 'Manage Players'
 		]);
 	}
 

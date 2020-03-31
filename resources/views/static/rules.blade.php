@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="page-title">
-		<h1>The Rules</h1>
-	</div>
+
 	<p>Welcome to the rules for season 2(b) "Season of the Clam" for our Destiny 1v1 league. Season 2(a) was abandoned due to the insane number of fixtures and a last-minute decision to re-work this in to a multi-league format. Our hope is that shorter seasons with promotions and relegations will make this more fun and competitive for everyone.</p>
 
 	<div class="page-title">

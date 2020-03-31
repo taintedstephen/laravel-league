@@ -4,9 +4,6 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h1 class="card-title">
-					Generated Fixtures
-				</h1>
 
 				@foreach ($fixtures as $division)
 					<h3 class="card-subtitle mb-2">{{ $division["name"] }}</h3>

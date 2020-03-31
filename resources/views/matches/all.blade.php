@@ -4,10 +4,7 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				<h1 class="card-title">
-					Matches
-				</h1>
-
+			
 				<table class="table table-striped table-responsive-sm">
 					<thead>
 						<tr>

@@ -16,12 +16,17 @@ class PlayerController extends Controller
 	public function index()
 	{
 		$players = Player::all();
-		return view('players.all', ['players' => $players]);
+		return view('players.all', [
+			'players' => $players,
+			'title' => 'Players'
+		]);
 	}
 
 	public function new()
 	{
-		return view('players.new');
+		return view('players.new', [
+			'title' => 'New Player'
+		]);
 	}
 
 	public function create(Request $request)
@@ -42,7 +47,10 @@ class PlayerController extends Controller
 	public function edit($id)
 	{
 		$player = Player::findOrFail($id);
-		return view('players.edit', ['player' => $player]);
+		return view('players.edit', [
+			'player' => $player,
+			'title' => 'Edit Player'
+		]);
 	}
 
 	public function update(Request $request)

@@ -14,10 +14,17 @@
 <body>
     <div class="viewport">
 		<header class="header">
-			<a href="{{ url('/') }}" class="header__logo">
-				<img src="/images/logo.jpg" alt="Logo" class="header-logo__image" />
-			</a>
-			<div class="header__trigger" onclick="$('body').addClass('menu-open')"></div>
+			<div class="header__inner">
+				<a href="{{ url('/') }}" class="header__logo">
+					<img src="/images/logo.jpg" alt="Logo" class="header-logo__image" />
+				</a>
+				<div class="page-title">
+					<h1>
+						{{ $title }}
+					</h1>
+				</div>
+				<div class="header__trigger" onclick="$('body').addClass('menu-open')"></div>
+			</div>
 		</header>
 
         <main class="main">
@@ -75,6 +82,9 @@
 				</nav>
 			</div>
 		</div>
+	</div>
+	<div class="background">
+		<div class="lines"></div>
 	</div>
 </body>
 </html>
