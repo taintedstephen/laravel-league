@@ -10,7 +10,7 @@
 					<a href="/divisions/players" class="btn btn-secondary">Manage Players</a>
 				</div>
 
-				<table class="table table-striped table-responsive-sm">
+				<table class="table table-collapses">
 					<thead>
 						<tr>
 							<th scope="col">Name</th>
@@ -22,12 +22,12 @@
 					<tbody>
 						@foreach ($divisions as $division)
 							<tr>
-								<td>{{ $division->name }}</td>
-								<td>{{ count($division->players) }}</td>
-								<td>
+								<td data-th="Name">{{ $division->name }}</td>
+								<td data-th="Players">{{ count($division->players) }}</td>
+								<td class="table-responsive--fill">
 									<a href="/divisions/edit/{{ $division->id }}" class="btn btn-warning">Edit</a>
 								</td>
-								<td>
+								<td class="table-responsive--fill">
 									<form
 										method="post"
 										action="/divisions/remove"

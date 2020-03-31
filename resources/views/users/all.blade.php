@@ -4,12 +4,12 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-			
+
 				<div class="btn-toolbar">
 					<a href="/users/new" class="btn btn-primary float-right">New User</a>
 				</div>
 
-				<table class="table table-striped table-responsive-sm">
+				<table class="table table-collapses">
 					<thead>
 						<tr>
 							<th scope="col">Email</th>
@@ -21,12 +21,12 @@
 					<tbody>
 						@foreach ($users as $user)
 							<tr>
-								<td>{{ $user->email }}</td>
-								<td>{{ $user->name }}</td>
-								<td>
+								<td data-th="Email">{{ $user->email }}</td>
+								<td data-th="Name">{{ $user->name }}</td>
+								<td class="table-responsive--fill">
 									<a href="/users/edit/{{ $user->id }}" class="btn btn-warning">Edit</a>
 								</td>
-								<td>
+								<td class="table-responsive--fill">
 									<form
 										method="post"
 										action="/users/remove"

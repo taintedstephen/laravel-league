@@ -246,14 +246,11 @@ body.menu-open .menu-overlay {
 
 .division {
 	margin: 0 0 2rem;
-    border: none;
-    background: rgba(0,0,0,.05);
-	padding: 20px;
 }
 
 .division h3 {
 	margin-bottom: 1rem;
-	text-align: left;
+	text-align: center;
 	font-weight: 600;
 	letter-spacing: 1rem;
 }
@@ -411,10 +408,19 @@ body.menu-open .menu-overlay {
 .fixture-week {
 	text-align: center;
 	margin-bottom: 2rem;
+	background: rgba(0,0,0,.05);
+	padding: 20px;
+}
+
+.fixture-week h3 {
+	margin-bottom: 1rem;
+	font-weight: 600;
+	letter-spacing: 1rem;
 }
 
 .fixture-week h4 {
-	margin: 0 0 0.5rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
 }
 
 .fixture-list {
@@ -439,11 +445,12 @@ body.menu-open .menu-overlay {
 
 .fixture-player a {
 	text-decoration: none;
-	color: #231f20;
+	color: rgba(255,255,255,0.5);
+	transition: color 0.25s;
 }
 
 .fixture-player a:hover {
-	text-decoration: underline;
+	color: rgba(255,255,255,1);
 }
 
 .fixture-player--home {
@@ -451,17 +458,26 @@ body.menu-open .menu-overlay {
 }
 
 .fixture-player__score {
-	color: #c62b29;
+	color: #ffffff;
 	width: 30px;
 	text-align: center;
 	display: inline-block;
 	font-weight: 600;
+	background: #231f20;
+	padding: 3px 0;
+	margin: 0 3px;
 }
 
 .fixture-vs {
 	opacity: 0.5;
 	font-size: 0.75rem;
 	width: 6%;
+}
+
+@media (max-width: 767px) {
+	.fixture-player {
+		font-size: 12px;
+	}
 }
 
 
@@ -522,9 +538,17 @@ input.btn:hover {
 	width: 80px;
 	position: absolute;
 	bottom: 0;
-	background: #231f20;
+	background: #ffffff;
 	content:" ";
 	height: 3px;
+}
+
+.btn-toolbar {
+	padding: 0 0 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .form-group {
@@ -589,3 +613,47 @@ input.btn:hover {
 .division-players li {
 	padding: 10px;
 }
+
+/* ======================================================================== */
+
+/* ==== RESPONSIVE TABLE ================================================== */
+
+@media (max-width: 767px) {
+	.table-collapses thead {
+		display: none;
+	}
+
+	.table-collapses td {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0;
+		border: 0;
+		text-align: left;
+		padding-left: 50%;
+		position: relative;
+	}
+
+	.table-collapses td:after {
+		content: attr(data-th);
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 50%;
+		padding: 0.7rem;
+		text-align: right;
+		box-sizing: border-box;
+		font-weight: 700;
+	}
+
+	.table-collapses td:last-child {
+		margin-bottom: 3px;
+	}
+
+	.table-collapses .table-responsive--fill {
+		padding-left: 0.7rem;
+		text-align: center;
+	}
+}
+
+/* ======================================================================== */

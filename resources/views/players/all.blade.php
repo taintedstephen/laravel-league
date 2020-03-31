@@ -4,12 +4,12 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-				
+
 				<div class="btn-toolbar">
 					<a href="/players/new" class="btn btn-primary float-right">New Player</a>
 				</div>
 
-				<table class="table table-striped table-responsive-sm">
+				<table class="table table-collapses">
 					<thead>
 						<tr>
 							<th scope="col">PSN</th>
@@ -21,12 +21,12 @@
 					<tbody>
 						@foreach ($players as $player)
 							<tr>
-								<td>{{ $player->psn }}</td>
-								<td>{{ $player->name }}</td>
-								<td>
+								<td data-th="PSN">{{ $player->psn }}</td>
+								<td data-th="Name">{{ $player->name }}</td>
+								<td class="table-responsive--fill">
 									<a href="/players/edit/{{ $player->id }}" class="btn btn-warning">Edit</a>
 								</td>
-								<td>
+								<td class="table-responsive--fill">
 									<form
 										method="post"
 										action="/players/remove"

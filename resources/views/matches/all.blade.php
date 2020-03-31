@@ -4,8 +4,8 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-body">
-			
-				<table class="table table-striped table-responsive-sm">
+
+				<table class="table table-collapses">
 					<thead>
 						<tr>
 							<th scope="col">Week</th>
@@ -20,20 +20,20 @@
 					<tbody>
 						@foreach ($matches as $match)
 							<tr>
-								<td>{{ $match->match_week }}</td>
-								<td>{{ $match->division->name }}</td>
-								<td>{{ $match->homePlayer->psn }}</td>
-								<td>{{ $match->awayPlayer->psn }}</td>
+								<td data-th="Match Week">{{ $match->match_week }}</td>
+								<td data-th="Name">{{ $match->division->name }}</td>
+								<td data-th="Home">{{ $match->homePlayer->psn }}</td>
+								<td data-th="Away">{{ $match->awayPlayer->psn }}</td>
 								@if ( $match->has_result )
-									<td>{{ $match->home_score }} : {{ $match->away_score }}</td>
-									<td>{{ ucwords(str_replace('_', ' ', $match->outcome)) }}</td>
-									<td>
+									<td data-th="Score">{{ $match->home_score }}&nbsp;:&nbsp;{{ $match->away_score }}</td>
+									<td data-th="Outcome">{{ ucwords(str_replace('_', ' ', $match->outcome)) }}</td>
+									<td class="table-responsive--fill">
 										<a href="/results/edit/{{ $match->id }}" class="btn btn-warning">Edit</a>
 									</td>
 								@else
-									<td></td>
-									<td>No result</td>
-									<td>
+									<td data-th="Score"></td>
+									<td data-th="Outcome">No result</td>
+									<td class="table-responsive--fill">
 										<a href="/results/edit/{{ $match->id }}" class="btn btn-primary">Add Scores</a>
 									</td>
 								@endif

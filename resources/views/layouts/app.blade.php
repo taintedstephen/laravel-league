@@ -20,7 +20,7 @@
 				</a>
 				<div class="page-title">
 					<h1>
-						{{ $title }}
+						{{ $title ?? 'Destiny League' }}
 					</h1>
 				</div>
 				<div class="header__trigger" onclick="$('body').addClass('menu-open')"></div>
