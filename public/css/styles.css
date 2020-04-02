@@ -238,6 +238,9 @@ body.menu-open .menu-overlay {
 	padding: 30px 15px;
 	max-width: 800px;
 	margin: auto;
+	min-height: 100vh;
+	min-height: calc(100vh - 90px);
+	box-sizing: border-box;
 }
 
 /* ======================================================================== */
