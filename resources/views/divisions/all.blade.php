@@ -31,7 +31,6 @@
 									<form
 										method="post"
 										action="/divisions/remove"
-										onsubmit="return confirm('Really?')"
 										name="remove-player"
 									>
 										@csrf

@@ -30,7 +30,6 @@
 									<form
 										method="post"
 										action="/users/remove"
-										onsubmit="return confirm('Really?')"
 										name="remove-user"
 									>
 										@csrf
